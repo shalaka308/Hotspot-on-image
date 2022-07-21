@@ -1,0 +1,145 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  line-height: 1.5;
+  background: #221625;
+  background: linear-gradient(135deg, #442c4a 0%, #221625 100%) no-repeat center center;
+  background-size: 100% 100%;
+  height: 100%;
+}
+
+img {
+  display: flex;
+  max-width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vw;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1225px;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 6px 24px #221625;
+      margin: 0 auto;
+}
+
+.hotspots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.hotspots .hotspot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.hotspots .hotspot:nth-child(1) .trigger {
+  top: 57%;
+  left: 25%;
+}
+.hotspots .hotspot:nth-child(2) .trigger {
+  top: 57%;
+  left: 71%;
+}
+.hotspots .hotspot:nth-child(3) .trigger {
+  top: 57%;
+  left: 54%;
+}
+.hotspots .hotspot .trigger {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background: #ff2255;
+  color: #EEE6F0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: all;
+  box-shadow: 0 0 0 0 #ff2255;
+  transition: box-shadow 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.hotspots .hotspot .trigger:hover {
+  box-shadow: 0 0 0 8px rgba(255, 34, 85, 0.5);
+}
+
+
+.speech-bubble {
+    position: absolute;
+    width: 150px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+    z-index: 2;
+}
+        
+
+
+
+.hotspots .hotspot:nth-child(1) .trigger .speech-bubble {
+    bottom: 50px;
+    right: -58px;
+}
+.hotspots .hotspot:nth-child(2) .trigger .speech-bubble {
+   bottom: 50px;
+    right: -57px;
+}
+.hotspots .hotspot:nth-child(3) .trigger .speech-bubble {
+   bottom: 50px;
+    right: -55px;
+}
+
+
+
+.speech-bubble:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+}

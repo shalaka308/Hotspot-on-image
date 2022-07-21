@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+html{
+  height: 100%
+
+}
+
+body{
+  font-family: Lato, sans-serif
+  line-height: 1.5
+  background: #221625
+  background: linear-gradient(135deg, #442c4a 0%,#221625 100%) no-repeat center center
+  background-size: 100% 100%
+  height: 100%
+
+
+}
+img{
+  display: flex
+  max-width: 100%
+  user-select: none
+}
+main
+ {
+     display: flex
+  flex-direction: column
+  align-items: center
+  padding: 4vw
+ }
+  
+.container{
+     position: relative
+  max-width: 1152px
+  border-radius: 6px
+  overflow: hidden
+  z-index: 1
+  box-shadow: 0 6px 24px rgba( #221625, 1 )
+}
+  
+.hotspots{
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  overflow: hidden
+}
+
+
+  .hotspot{
+     position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    pointer-events: none
+  }
+   
+    
+    &:nth-child( 1 ) .trigger{
+         top: 70%
+      left: 25%
+    }
+     
+
+    &:nth-child( 2 ) .trigger{
+           top: 40%
+      left: 71%
+    }
+   
+      
+    &:nth-child( 3 ) .trigger
+      top: 77%
+      left: 64%
+
+    .trigger
+      position: absolute
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 36px
+      height: 36px
+      background: #ff2255
+      color: #EEE6F0
+      border-radius: 50%
+      transform: translate( -50%, -50% )
+      cursor: pointer
+      pointer-events: all
+      box-shadow: 0 0 0 0 #ff2255
+      transition: box-shadow .4s
+      user-select: none
+      
+      &:hover
+        box-shadow: 0 0 0 8px rgba( #ff2255, .5 )
+
+    .content
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      opacity: 0
+      pointer-events: none
+      transition: opacity .6s
+      
+      &::before
+        content: ''
+        position: absolute
+        display: flex
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: rgba( #221625, .8 )
+        opacity: 0
+        transition: opacity .4s
+      
+      figure
+        position: relative
+        width: 100%
+        z-index: 2
+        opacity: 0
+        transform: translate( 0, -10% )
+        transition: transform .6s, opacity .6s
+        user-select: none
+        
+        &::before
+          content: '×'
+          display: flex
+          justify-content: center
+          align-items: center
+          position: absolute
+          top: 12px
+          right: 12px
+          color: #EEE6F0
+          height: 36px
+          width: 36px
+          border-radius: 50%
+          background: rgba( #442c4a, .5 )
+          font-size: 24px
+          pointer-events: all
+          cursor: pointer
+        
+        img
+          width: 100%
+        
+        figcaption
+          position: absolute
+          display: flex
+          justify-content: flex-start
+          align-items: flex-end
+          bottom: 0
+          left: 0
+          width: 100%
+          padding: 16px
+          background: rgba( #442c4a, .5 )
+          color: white
+          pointer-events: none
+
+    &.reveal
+      z-index: 1
+      pointer-events: all
+      
+      .content
+        opacity: 1
+        
+        &::before
+          opacity: 1
+        
+        figure
+          opacity: 1
+          transform: translate( 0, 0 )
+          transition-delay: .4s
+          pointer-events: all
+          user-select: none
+          
+          figcaption
+            pointer-events: all
